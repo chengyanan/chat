@@ -13,8 +13,10 @@ class YNAnswerTableViewCell: UITableViewCell {
     var questionModel: YNAnswerModel? {
     
         didSet {
-        
+            
             if let _ = questionModel {
+                
+                setNeedsDisplay()
                 
                 //TODO: 设置头像 和文字
                 self.contentButton.setTitle(questionModel?.description, forState: .Normal)
@@ -28,7 +30,6 @@ class YNAnswerTableViewCell: UITableViewCell {
                 }
                 
                 
-                setNeedsUpdateConstraints()
             }
             
         }
@@ -116,20 +117,13 @@ class YNAnswerTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        self.avatarImageView.removeConstraints(self.avatarImageView.constraints)
-//        self.contentButton.removeConstraints(self.contentButton.constraints)
-//        
-//        self.activityIndicatorView.removeConstraints(self.activityIndicatorView.constraints)
-//        
-//        self.sendButton.removeConstraints(self.sendButton.constraints)
-//
-//        setNeedsUpdateConstraints()
+       self.avatarImageView.removeConstraints(self.avatarImageView.constraints)
+        self.contentButton.removeConstraints(self.contentButton.constraints)
         
-//        setLayout()
-    }
-    
-    override func setNeedsUpdateConstraints() {
-    
+        self.activityIndicatorView.removeConstraints(self.activityIndicatorView.constraints)
+        
+        self.sendButton.removeConstraints(self.sendButton.constraints)
+        
         setLayout()
     }
     
