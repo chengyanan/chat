@@ -18,10 +18,11 @@ class YNNewAnswerQuestionViewController: UIViewController, UITableViewDataSource
     
     //inputView的高度
     let inputViewHeight: CGFloat = 44
-    
     let margin: CGFloat = 5
     
 //    var questionModel: YNQuestionModel?
+    
+    var isKeyboardShowing = false
     
     var dataarray = [YNAnswerModel]()
     
@@ -134,6 +135,8 @@ class YNNewAnswerQuestionViewController: UIViewController, UITableViewDataSource
         
         if let userInfo = notification.userInfo {
             
+            self.isKeyboardShowing = true
+            
             let keyboardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             
             let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
@@ -184,6 +187,8 @@ class YNNewAnswerQuestionViewController: UIViewController, UITableViewDataSource
         
         if let userInfo = notification.userInfo {
             
+             self.isKeyboardShowing = false
+            
             let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
             let animations:(() -> Void) = {
                 
@@ -225,6 +230,9 @@ class YNNewAnswerQuestionViewController: UIViewController, UITableViewDataSource
             
             //判断tableView是否需要向上移动
             decideIfTableViewNeedMoveUp()
+            
+            self.messageStr = ""
+            
         }
     }
     
@@ -236,7 +244,40 @@ class YNNewAnswerQuestionViewController: UIViewController, UITableViewDataSource
     
     func decideIfTableViewNeedMoveUp() {
         
-        let needScroolHeight = cellHeight + self.keyBoardHeight! + inputViewHeight + 64 - self.view.frame.size.height
+        if isKeyboardShowing {
+        
+            //当有键盘的时候点击发送
+            ifTableViewNeedScrollWithKeyboard()
+            
+        } else {
+        
+            //当没键盘的时候点击发送
+            ifTableViewNeedScrollWithoutKeyboard()
+            
+        }
+        
+    
+    }
+    
+    func ifTableViewNeedScrollWithoutKeyboard() {
+    
+        let tableViewNeedScrollHeight = 64 + cellHeight + inputViewHeight - self.view.frame.size.height
+        
+        if tableViewNeedScrollHeight > 0 {
+            
+            //需要滚动
+            self.tableView?.scrollToRowAtIndexPath(NSIndexPath(forRow: self.dataarray.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            
+            
+        } else {
+            
+            //如果cell高度没有超出tableview的高度 不需要滚动
+        }
+    }
+    
+    func ifTableViewNeedScrollWithKeyboard() {
+    
+        let needScroolHeight = 64 + cellHeight + self.keyBoardHeight! + inputViewHeight - self.view.frame.size.height
         
         let animations: (()->Void) = {
             
@@ -249,7 +290,7 @@ class YNNewAnswerQuestionViewController: UIViewController, UITableViewDataSource
                     //如果需要向上移动的距离大于键盘的距离， 就向下移动tableview
                     self.tableView?.scrollToRowAtIndexPath(NSIndexPath(forRow: self.dataarray.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
                     
-                     self.tableView?.transform = CGAffineTransformMakeTranslation(0, -maxScrollHeight)
+                    self.tableView?.transform = CGAffineTransformMakeTranslation(0, -maxScrollHeight)
                     
                 } else {
                     

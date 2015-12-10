@@ -39,6 +39,7 @@ class YNInputView: UIView, UITextViewDelegate {
     //MARK: event response
     func finishButtonDidClick() {
         
+        self.textView.text = ""
         delegate?.inputViewFinishButtonDidClick()
     }
     

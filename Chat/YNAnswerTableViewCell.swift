@@ -10,13 +10,16 @@ import UIKit
 
 class YNAnswerTableViewCell: UITableViewCell {
     
+    var didSetupConstraints: Bool = false
+    
     var questionModel: YNAnswerModel? {
     
         didSet {
             
             if let _ = questionModel {
                 
-                setNeedsDisplay()
+                setInterface()
+                setLayout()
                 
                 //TODO: 设置头像 和文字
                 self.contentButton.setTitle(questionModel?.description, forState: .Normal)
@@ -35,6 +38,15 @@ class YNAnswerTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.avatarImageView.removeFromSuperview()
+        self.contentButton.removeFromSuperview()
+        self.activityIndicatorView.removeFromSuperview()
+        self.sendButton.removeFromSuperview()
+    }
+    
     func resizeImage(name: String) -> UIImage{
     
         let image = UIImage(named: name)
@@ -50,8 +62,6 @@ class YNAnswerTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setInterface()
         
         self.sendButton.addTarget(self, action: "sendMessageToserver", forControlEvents: .TouchUpInside)
         
@@ -114,21 +124,8 @@ class YNAnswerTableViewCell: UITableViewCell {
         
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-       self.avatarImageView.removeConstraints(self.avatarImageView.constraints)
-        self.contentButton.removeConstraints(self.contentButton.constraints)
-        
-        self.activityIndicatorView.removeConstraints(self.activityIndicatorView.constraints)
-        
-        self.sendButton.removeConstraints(self.sendButton.constraints)
-        
-        setLayout()
-    }
-    
     func setLayout() {
-        
+    
         //avatarImageView
         Layout().addTopConstraint(avatarImageView, toView: self.contentView, multiplier: 1, constant: questionModel!.marginTopBottomLeftOrRight)
         Layout().addWidthHeightConstraints(avatarImageView, toView: nil, multiplier: 1, constant: questionModel!.avatarWidthHeight)
@@ -183,6 +180,6 @@ class YNAnswerTableViewCell: UITableViewCell {
         }
     }
     
-    
+
   
 }
