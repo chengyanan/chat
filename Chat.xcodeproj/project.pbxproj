@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		40669F141C19546B00C28705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F131C19546B00C28705 /* AppDelegate.swift */; };
-		40669F161C19546B00C28705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F151C19546B00C28705 /* ViewController.swift */; };
 		40669F191C19546B00C28705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40669F171C19546B00C28705 /* Main.storyboard */; };
 		40669F1B1C19546B00C28705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40669F1A1C19546B00C28705 /* Assets.xcassets */; };
 		40669F1E1C19546B00C28705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40669F1C1C19546B00C28705 /* LaunchScreen.storyboard */; };
 		40669F291C19546B00C28705 /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F281C19546B00C28705 /* ChatTests.swift */; };
 		40669F341C19546B00C28705 /* ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F331C19546B00C28705 /* ChatUITests.swift */; };
+		40669F451C19562400C28705 /* YNAnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F411C19562400C28705 /* YNAnswerModel.swift */; };
+		40669F461C19562400C28705 /* YNAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F421C19562400C28705 /* YNAnswerTableViewCell.swift */; };
+		40669F471C19562400C28705 /* YNInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F431C19562400C28705 /* YNInputView.swift */; };
+		40669F481C19562400C28705 /* YNNewAnswerQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F441C19562400C28705 /* YNNewAnswerQuestionViewController.swift */; };
+		40669F4B1C19570500C28705 /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F4A1C19570500C28705 /* tools.swift */; };
+		40669F4D1C19573A00C28705 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F4C1C19573A00C28705 /* Macro.swift */; };
+		40669F4F1C19577B00C28705 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F4E1C19577B00C28705 /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +41,24 @@
 
 /* Begin PBXFileReference section */
 		40669F101C19546B00C28705 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40669F131C19546B00C28705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40669F151C19546B00C28705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40669F131C19546B00C28705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		40669F181C19546B00C28705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		40669F1A1C19546B00C28705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40669F1A1C19546B00C28705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		40669F1D1C19546B00C28705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		40669F1F1C19546B00C28705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40669F1F1C19546B00C28705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		40669F241C19546B00C28705 /* ChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40669F281C19546B00C28705 /* ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTests.swift; sourceTree = "<group>"; };
 		40669F2A1C19546B00C28705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40669F2F1C19546B00C28705 /* ChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40669F331C19546B00C28705 /* ChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUITests.swift; sourceTree = "<group>"; };
 		40669F351C19546B00C28705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40669F411C19562400C28705 /* YNAnswerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNAnswerModel.swift; sourceTree = "<group>"; };
+		40669F421C19562400C28705 /* YNAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		40669F431C19562400C28705 /* YNInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNInputView.swift; sourceTree = "<group>"; };
+		40669F441C19562400C28705 /* YNNewAnswerQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNNewAnswerQuestionViewController.swift; sourceTree = "<group>"; };
+		40669F4A1C19570500C28705 /* tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
+		40669F4C1C19573A00C28705 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		40669F4E1C19577B00C28705 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,11 @@
 		40669F121C19546B00C28705 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				40669F131C19546B00C28705 /* AppDelegate.swift */,
-				40669F151C19546B00C28705 /* ViewController.swift */,
-				40669F171C19546B00C28705 /* Main.storyboard */,
-				40669F1A1C19546B00C28705 /* Assets.xcassets */,
-				40669F1C1C19546B00C28705 /* LaunchScreen.storyboard */,
-				40669F1F1C19546B00C28705 /* Info.plist */,
+				40669F411C19562400C28705 /* YNAnswerModel.swift */,
+				40669F421C19562400C28705 /* YNAnswerTableViewCell.swift */,
+				40669F431C19562400C28705 /* YNInputView.swift */,
+				40669F441C19562400C28705 /* YNNewAnswerQuestionViewController.swift */,
+				40669F491C1956B000C28705 /* Supporting Files */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -123,6 +134,21 @@
 				40669F351C19546B00C28705 /* Info.plist */,
 			);
 			path = ChatUITests;
+			sourceTree = "<group>";
+		};
+		40669F491C1956B000C28705 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40669F4E1C19577B00C28705 /* Layout.swift */,
+				40669F4C1C19573A00C28705 /* Macro.swift */,
+				40669F4A1C19570500C28705 /* tools.swift */,
+				40669F131C19546B00C28705 /* AppDelegate.swift */,
+				40669F171C19546B00C28705 /* Main.storyboard */,
+				40669F1A1C19546B00C28705 /* Assets.xcassets */,
+				40669F1C1C19546B00C28705 /* LaunchScreen.storyboard */,
+				40669F1F1C19546B00C28705 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40669F161C19546B00C28705 /* ViewController.swift in Sources */,
+				40669F451C19562400C28705 /* YNAnswerModel.swift in Sources */,
+				40669F4D1C19573A00C28705 /* Macro.swift in Sources */,
 				40669F141C19546B00C28705 /* AppDelegate.swift in Sources */,
+				40669F471C19562400C28705 /* YNInputView.swift in Sources */,
+				40669F4B1C19570500C28705 /* tools.swift in Sources */,
+				40669F4F1C19577B00C28705 /* Layout.swift in Sources */,
+				40669F461C19562400C28705 /* YNAnswerTableViewCell.swift in Sources */,
+				40669F481C19562400C28705 /* YNNewAnswerQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +334,7 @@
 				40669F181C19546B00C28705 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		40669F1C1C19546B00C28705 /* LaunchScreen.storyboard */ = {
@@ -310,6 +343,7 @@
 				40669F1D1C19546B00C28705 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
