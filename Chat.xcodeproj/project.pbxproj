@@ -20,6 +20,7 @@
 		40669F4B1C19570500C28705 /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F4A1C19570500C28705 /* tools.swift */; };
 		40669F4D1C19573A00C28705 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F4C1C19573A00C28705 /* Macro.swift */; };
 		40669F4F1C19577B00C28705 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40669F4E1C19577B00C28705 /* Layout.swift */; };
+		40BAE2A31C7D6B68009DF09F /* animate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 40BAE2A21C7D6B68009DF09F /* animate.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		40669F4A1C19570500C28705 /* tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
 		40669F4C1C19573A00C28705 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		40669F4E1C19577B00C28705 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		40BAE2A21C7D6B68009DF09F /* animate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animate.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				40669F1A1C19546B00C28705 /* Assets.xcassets */,
 				40669F1C1C19546B00C28705 /* LaunchScreen.storyboard */,
 				40669F1F1C19546B00C28705 /* Info.plist */,
+				40BAE2A21C7D6B68009DF09F /* animate.gif */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				40669F1E1C19546B00C28705 /* LaunchScreen.storyboard in Resources */,
 				40669F1B1C19546B00C28705 /* Assets.xcassets in Resources */,
+				40BAE2A31C7D6B68009DF09F /* animate.gif in Resources */,
 				40669F191C19546B00C28705 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +525,7 @@
 				40669F3A1C19546B00C28705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40669F3B1C19546B00C28705 /* Build configuration list for PBXNativeTarget "ChatTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +534,7 @@
 				40669F3D1C19546B00C28705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40669F3E1C19546B00C28705 /* Build configuration list for PBXNativeTarget "ChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +543,7 @@
 				40669F401C19546B00C28705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
